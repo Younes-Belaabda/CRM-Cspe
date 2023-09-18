@@ -27,7 +27,7 @@
             CONDITIONS GÉNÉRALES DE VENTE
         </p>
         <div>
-            Vous venez de souscrire auprès de CSPE un abonnement de service et nous vous remercions de votre confiance.
+            Vous venez de souscrire auprès de CSPE PLUS un abonnement de service et nous vous remercions de votre confiance.
             Sur
             simple appel, ce contrat vous permet d’être mis en relation, pour vos petits travaux, avec un professionnel
             qualifié et d’obtenir un devis en moins de 24h.
@@ -51,10 +51,10 @@
             non-professionnels tels que définis par l’article liminaire du Code de la consommation.
         </p>
         <p>
-            <span style="color: rgb(44, 151, 223)">« Le Service Client » :</span> Le service téléphonique de CSPE,
+            <span style="color: rgb(44, 151, 223)">« Le Service Client » :</span> Le service téléphonique de CSPE PLUS,
             Société par Action Simplifiée au capital social de
             1.000 euros, 78 AV DES CHAMPS ELYSEES, 75008 PARIS - RCS Paris B 952 704 666 , et chargé de la prestation de
-            service associée au contrat CSPE.
+            service associée au contrat CSPE PLUS.
         </p>
         <p>
             <span style="color: rgb(44, 151, 223)">« Devis » :</span> Document remis au Client à titre gratuit par email
@@ -81,7 +81,7 @@
             <p>
                 Pour bénéficier en toute sérénité du service de mise en relation, un seul numéro : 09 85 40 67 96
                 accessible du
-                24h sur 24 / 7j sur 7 . CSPE vous accompagne dans la mise en relation et la constitution de vos
+                24h sur 24 / 7j sur 7 . CSPE PLUS vous accompagne dans la mise en relation et la constitution de vos
                 dossiers
                 auprès des professionnels pour les travaux suivants :
             </p>
@@ -99,7 +99,7 @@
         </p>
         <p>
             Chacune des Interventions souhaitées doit faire l’objet d’un appel par le Client au Service Clientèle de
-            CSPE
+            CSPE PLUS
             pour la création d’un dossier de mise en relation. Le Service Clientèle définit avec vous les
             caractéristiques
             de votre installation et vos besoins. A cet effet, vous précisez la localisation, la nature de
@@ -111,7 +111,7 @@
             en relation. Vous restez libre de
             refuser le Prestataire proposé par le Service Clientèle ; dans ce cas, il reconnaît toutefois la réalisation
             de
-            la mission de mise en relation effectuée par CSPE au titre du service.
+            la mission de mise en relation effectuée par CSPE PLUS au titre du service.
         </p>
         <p>
             Le Service Clientèle organise l’Intervention auprès du Prestataire dans un délai de trois (24) heures pour
@@ -123,7 +123,7 @@
         <p>
             La validation de la commande et le recouvrement des factures issues de l’Intervention reste à la charge du
             Client dans le cadre du contrat
-            entre le Client et le Prestataire ; CSPE n’intervenant pas dans la relation contractuelle établie entre le
+            entre le Client et le Prestataire ; CSPE PLUS n’intervenant pas dans la relation contractuelle établie entre le
             Client et le Prestataire.
         </p>
         <p>
@@ -131,7 +131,7 @@
             sa
             chaudière/chauffage aux normes réglementaires en vigueur. Si l’installation faisant l’objet du dépannage ne
             remplit pas ces conditions, le Prestataire peut refuser d’intervenir. Le Client reconnaît qu’en aucun cas,
-            CSPE
+            CSPE PLUS
             ne participe à la relation contractuelle existant entre lui et le Prestataire ni ne pourra être tenu
             responsable
             de la prestation réalisée par le Prestataire. Le Client peut utiliser le service de mise en relation proposé
@@ -143,7 +143,7 @@
             1.2. Le service d’optimisation des depenses
         </p>
         <p>
-            Le service client CSPE vous accompagne et vous aide à détecter les aides financières disponibles telles que:
+            Le service client CSPE PLUS vous accompagne et vous aide à détecter les aides financières disponibles telles que:
         </p>
         <div>
             <p>
@@ -161,7 +161,7 @@
             </p>
         </div>
         <p>
-            Le service client CSPE pourra également vous accompagner dans l’optimisation de vos factures d’électricité
+            Le service client CSPE PLUS pourra également vous accompagner dans l’optimisation de vos factures d’électricité
             et de
             gaz en comparant les offres disponibles sur le marché.
         </p>
@@ -177,11 +177,11 @@
             Si vous avez une réclamation à formuler quant à la souscription du contrat de prestation de service ou à la
             délivrance de la prestation de service de mise en relation avec un professionnel, vous pouvez la formuler
             auprès
-            de votre interlocuteur habituel : CSPE au 09 85 40 67 96 ou par email à l’adresse contact@cspe.me.
+            de votre interlocuteur habituel : CSPE PLUS au 09 85 40 67 96 ou par email à l’adresse contact@cspe.me.
         </p>
         <p>
-            En cas d’insatisfaction concernant la réponse apportée, en contactant CSPE à l’adresse suivante :
-            CSPE – 78 AV DES CHAMPS ELYSEES - 75008 Paris
+            En cas d’insatisfaction concernant la réponse apportée, en contactant CSPE PLUS à l’adresse suivante :
+            CSPE PLUS – 78 AV DES CHAMPS ELYSEES - 75008 Paris
         </p>
         <p>
             Les services concernés accuseront réception de votre réclamation sous 10 jours ouvrables et étudieront votre
@@ -392,7 +392,7 @@
         </p>
         <p>
             Les données personnelles recueillies font l’objet de traitements destinés à la souscription/l’adhésion, la
-            gestion y compris commerciale et l’exécution du contrat par CSPE, responsable de traitement.
+            gestion y compris commerciale et l’exécution du contrat par CSPE PLUS, responsable de traitement.
         </p>
         <p>
             Les données recueillies permettent également le traitement des réclamations, médiations et contentieux,
@@ -459,7 +459,7 @@
             droits peuvent être exercés, en justifiant de votre identité, par courrier auprès de :
         </p>
         <p>
-            CSPE
+            CSPE PLUS
         </p>
         <p>
             Délégué à la Protection des Données
@@ -502,7 +502,7 @@
             parfaitement remplie et signée.
         </p>
         <p>
-            A la suite de votre demande de renonciation, si le 1er prélèvement a été lancé, CSPE s’engage à vous
+            A la suite de votre demande de renonciation, si le 1er prélèvement a été lancé, CSPE PLUS s’engage à vous
             rembourser
             dans les 30 jours suivants. Pour exercer votre droit de renonciation, vous pouvez utiliser le modèle en bas
             de

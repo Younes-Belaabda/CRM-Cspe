@@ -42,7 +42,7 @@ class Contrat extends Model
     {
         parent::boot();
         self::creating(function ($model) {
-            $model->rum =  IdGenerator::generate(['table' => 'contrats', 'field' => 'rum' , 'length' => 12, 'prefix' => 'cspe°']);
+            $model->rum =  IdGenerator::generate(['table' => 'contrats', 'field' => 'rum' , 'length' => 12, 'prefix' => 'cspeplus°']);
             $model->uid = Uuid::v1();
             // $model->uid =  IdGenerator::generate(['table' => 'contrats', 'field' => 'uid' , 'length' => 9, 'prefix' => 'CSPE']);
         });
