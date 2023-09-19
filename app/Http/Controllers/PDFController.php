@@ -32,5 +32,4 @@ class PDFController extends Controller
         }
         return back();
     }
-
 }

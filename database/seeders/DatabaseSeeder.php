@@ -42,15 +42,7 @@ class DatabaseSeeder extends Seeder
         ]);
         $admin->assignRole('agent');
 
-        // Status
-
-        // En Attente Client
-        // En Attente Back-Office
-        // Validé Call
-        // Rétracté
-        // Injoignable
-        // Impayé
-        // Non conforme
+        
 
     }
 }

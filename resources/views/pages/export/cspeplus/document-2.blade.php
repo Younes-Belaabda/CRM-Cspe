@@ -47,10 +47,10 @@
             pour
             renoncer à votre contrat en renvoyant le formulaire de renonciation se trouvant en bas des conditions
             générales, ou en nous adressant un email à l’adresse suivante : <strong>contact@cspe.fr</strong></p>
-        <p>Votre service <strong>CSPE PLUS</strong> vous coûtera seulement 15,90€ TTC/mois soit 63,60 € TTC/an, avec un
+        <p>Votre service <strong>CSPE PLUS</strong> vous coûtera seulement 15,90€ TTC/mois soit 190,80 € TTC/an, avec un
             engagement de 12
             mois. A l'issue du délai de renonciation, nous vous prélèverons votre cotisation mensuelle de 15,90 € TTC
-            sur votre compte bancaire le 5 de chaque trimestre, conformément à votre demande.</p>
+            sur votre compte bancaire le 5 de chaque mois, conformément à votre demande.</p>
         <p>Notre service client est joignable au 09 85 40 68 73 du lundi au vendredi de 10h à 19h. Vous trouverez en
             pièces jointes :</p>
         <div>
@@ -92,14 +92,14 @@
                 <p style="margin-left: 5px">Mode de paiement :</p>
                 <p style="margin-left: 5px">* Prélèvement</p>
                 <p style="margin-left: 5px">Règlement :</p>
-                <p style="margin-left: 5px">* Trimestriel, le 5 du mois</p>
+                <p style="margin-left: 5px">* Mensuel, le 5 du mois</p>
                 <div style="margin-left: 5px;">
                     <div></div>
                     <div>
                         <p>VOTRE CÔTISATION</p>
                         <p>15,90 €</p>
-                        <p>TTC/Trimestre (*)</p>
-                        <p>* soit 63,60 € TTC/an</p>
+                        <p>TTC/Mois (*)</p>
+                        <p>* soit 190,80 € TTC/an</p>
                     </div>
                 </div>
             </div>
@@ -388,7 +388,7 @@
             Le montant de votre abonnement est calculé forfaitairement. Des frais de gestion peuvent vous être demandés.
             Le montant de votre abonnement est assujetti à la Taxe sur la Valeur Ajouté en vigueur au jour du règlement
             de
-            votre abonnement ou de la trimestrialité.
+            votre abonnement mensuel.
             Le détail du montant de votre abonnement, ainsi que les taxes sont indiqués dans les conditions
             particulières
             que vous avez signées et les modalités de règlement détaillées dans ces mêmes conditions particulières.
@@ -747,7 +747,7 @@
             </div>
             <div>
                 <p>
-                    Paiement : TRIMESTRIEL
+                    Paiement : MENSUEL
                 </p>
                 <p>
                     Le 5 de chaque mois

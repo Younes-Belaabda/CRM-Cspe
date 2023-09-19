@@ -262,7 +262,7 @@
             Le montant de votre abonnement est calculé forfaitairement. Des frais de gestion peuvent vous être demandés.
             Le montant de votre abonnement est assujetti à la Taxe sur la Valeur Ajouté en vigueur au jour du règlement
             de
-            votre abonnement ou de la trimestrialité.
+            votre abonnement mensuel.
             Le détail du montant de votre abonnement, ainsi que les taxes sont indiqués dans les conditions
             particulières
             que vous avez signées et les modalités de règlement détaillées dans ces mêmes conditions particulières.
