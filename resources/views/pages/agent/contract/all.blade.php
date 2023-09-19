@@ -2,7 +2,7 @@
 
 @section('body')
     <div class="bg-gray-700 text-gray-300 p-6 relative md:ml-64 min-h-screen overflow-x-hidden">
-        <a href="{{ route('new-contract') }}">
+        <a href="{{ route('agent.contrat.create') }}">
             <button
                 class="md:absolute right-12 top-10 w-auto py-2 px-4 block ml-auto md:ml-0 mr-0 md:mr-5 rounded-md shadow-lg border border-transparent text-md font-bold rounded-sm text-white bg-red-900 hover:bg-red-800 focus:ring-offset-gray-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-900">
                 <i class="fa-solid fa-plus"></i> Nouveau Contrat

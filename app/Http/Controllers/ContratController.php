@@ -15,21 +15,12 @@ use Illuminate\Support\Facades\Mail;
 use App\Http\Requests\StoreContratRequest;
 use Haruncpi\LaravelIdGenerator\IdGenerator;
 use Illuminate\Validation\ValidationException;
+use Symfony\Component\Uid\Uuid;
 
 class ContratController extends Controller
 {
-    public function all(){
-        $contrats = Auth::user()->contrats->reverse();
-        return view('pages.agent.contract.all' , compact('contrats'));
-    }
-
-    public function all_plus(){
-        $contrats = Auth::user()->contratsplus->reverse();
-        return view('pages.agent.contract.allplus' , compact('contrats'));
-    }
-
-    public function new(){
-        return view('pages.agent.contract.new');
+    public function create(){
+        return view('pages.agent.contract.create');
     }
 
     public function store(StoreContratRequest $request){
@@ -46,7 +37,8 @@ class ContratController extends Controller
             $contrat = Contrat::create([
                 'genre'  => $request->genre,
                 'nom'     => $request->nom,
-                // 'rum' =>  IdGenerator::generate(['table' => 'contrats', 'length' => 9, 'prefix' => 'c°']),
+                // 'rum' =>  IdGenerator::generate(['table' => 'contrats', 'field' => 'rum' , 'length' => 12, 'prefix' => 'cspe°']),
+                // 'uid' => Uuid::v1(),
                 'prenom'  => $request->prenom,
                 'adresse' => $request->adresse,
                 'date'    => Carbon::createFromFormat('d/m/Y' , "$day/$month/$year"),
@@ -81,23 +73,26 @@ class ContratController extends Controller
                 'user_id' => Auth::user()->id
             ]);
 
-        if($request->type == 'cspe')
+        if($request->type == 'cspe'){
             $pdf = Pdf::loadView('pages.export.cspe.document-1', ['contrat' => $contrat]);
-        else
+        }
+        else{
             $pdf = Pdf::loadView('pages.export.cspeplus.document-1', ['contrat' => $contrat]);
+        }
 
 
         if($request->type == 'cspe'){
             Mail::to($contrat->mail)->send(new \App\Mail\cspe\CspeDocument1($contrat , $pdf));
-            
         }
         else{
             Mail::to($contrat->mail)->send(new \App\Mail\cspeplus\CspeDocument1($contrat , $pdf));
-            // Mail::to($contrat->mail)->send(new \App\Mail\cspeplus\CspeDocument2($contrat , $pdf));
         }
 
-        return redirect()->route('signature' , ['contrat' => $contrat]);
 
+        if($request->type == 'cspe')
+            return redirect()->route('agent.contrat.signature' , ['contrat' => $contrat]);
+        else
+            return redirect()->route('agent.contrat.signatureplus' , ['contrat' => $contrat]);
     }
 
     public function signature(Contrat $contrat){
@@ -106,11 +101,39 @@ class ContratController extends Controller
         return view('pages.agent.contract.signature' , ['contrat' => $contrat]);
     }
 
+    public function signatureplus(ContratPlus $contrat){
+        if($contrat->status == 'Validé call')
+            return abort(403 , 'Deja signé');
+        return view('pages.agent.contract.signatureplus' , ['contrat' => $contrat]);
+    }
 
-    // La page de signature client
-    public function cspe($contrat){
-        // dd($contrat);
-        $contrat = \App\Models\Contrat::find($contrat)->first();
+
+    public function all(){
+        $contrats = Auth::user()->contrats->reverse();
+        return view('pages.agent.contract.all' , compact('contrats'));
+    }
+
+    public function all_plus(){
+        $contrats = Auth::user()->contratsplus->reverse();
+        return view('pages.agent.contract.allplus' , compact('contrats'));
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+    /**
+     * Client Zone
+     */
+    public function signatureCspe(Contrat $contrat){
         if($contrat->status == 'Validé call')
             return abort(403 , 'Deja signé');
         if(!$contrat->is_mail_opened){
@@ -120,5 +143,25 @@ class ContratController extends Controller
         }
         return view('pages.client.signature' , compact('contrat'));
     }
+    public function signatureCspePlus(ContratPlus $contrat){
+        if($contrat->status == 'Validé call')
+            return abort(403 , 'Deja signé');
+        if(!$contrat->is_mail_opened){
+            $contrat->is_mail_opened = true;
+            $contrat->save();
+            EmailOpened::dispatch();
+        }
+        return view('pages.client.signatureplus' , compact('contrat'));
+    }
 
+    /**
+     * Export Zone
+     */
+    public function iframe(Contrat $contrat){
+        return view('pages.iframe.cspe' , compact('contrat'));
+    }
+
+    public function iframeCspePlus(ContratPlus $contrat){
+        return view('pages.iframe.cspeplus' , compact('contrat'));
+    }
 }

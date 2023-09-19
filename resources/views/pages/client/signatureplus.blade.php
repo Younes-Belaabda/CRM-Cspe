@@ -82,16 +82,20 @@
 </head>
 
 <body>
-    <iframe src="{{ route('export.cspe.document' , ['contrat' => $contrat]) }}" frameborder="0"></iframe>
-    <livewire:contrat.change-contrat-status :contrat="$contrat" />
+    <iframe src="{{ route('export.cspeplus.document' , ['contrat' => $contrat]) }}" frameborder="0"></iframe>
+    <livewire:contrat.change-contrat-status-plus :contrat="$contrat" />
     <livewire:scripts />
     <script src="https://js.pusher.com/7.2/pusher.min.js"></script>
     <script>
+        // Enable pusher logging - don't include this in production
+        // Pusher.logToConsole = true;
+
         var pusher = new Pusher('f6ab99bd1b657dfa833c', {
             cluster: 'eu'
         });
+
         var channel = pusher.subscribe('demo-chan');
-        channel.bind('App\\Events\\ClientSigner', function(data) {
+        channel.bind('App\\Events\\ClientSignerCspePlus', function(data) {
             Swal.fire({
                 title: 'Client a signé!',
                 text: data.contrat.rum,

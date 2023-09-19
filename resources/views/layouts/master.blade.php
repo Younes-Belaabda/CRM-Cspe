@@ -61,17 +61,17 @@
                             </li>
                             <div id="stark-menu-item" class="menu-item mb-6">
                                 <li class="flex w-full justify-between text-gray-300 cursor-pointer items-center my-2">
-                                    <a href="{{ route('contracts') }}" class="flex items-center">
+                                    <a href="{{ route('agent.contrat.all') }}" class="flex items-center">
                                         <span class="text-sm ml-8">Mes Contrats</span>
                                     </a>
                                 </li>
                                 <li class="flex w-full justify-between text-gray-300 cursor-pointer items-center my-2">
-                                    <a href="{{ route('contracts_plus') }}" class="flex items-center">
+                                    <a href="{{ route('agent.contrat.allplus') }}" class="flex items-center">
                                         <span class="text-sm ml-8">Mes Contrats PLUS</span>
                                     </a>
                                 </li>
                                 <li class="flex w-full justify-between text-gray-300 cursor-pointer items-center my-2">
-                                    <a href="{{ route('new-contract') }}" class="flex items-center">
+                                    <a href="{{ route('agent.contrat.create') }}" class="flex items-center">
                                         <span class="text-sm ml-8">Nouveau Contrat</span>
                                     </a>
                                 </li>

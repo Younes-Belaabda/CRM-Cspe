@@ -2,11 +2,11 @@
 
 namespace App\Http\Livewire\Contrat;
 
-use App\Models\Contrat;
 use Livewire\Component;
-use App\Events\ClientSigner;
+use App\Events\ClientSignerCspePlus;
+use App\Models\ContratPlus as Contrat;
 
-class ChangeContratStatus extends Component
+class ChangeContratStatusPlus extends Component
 {
     public $contrat;
     public $status;
@@ -41,7 +41,6 @@ class ChangeContratStatus extends Component
     }
 
     public function signer(){
-        // dD('done');
         $this->clicked += 1;
         if($this->clicked == 1) {
             $this->text_button = "Cliquer 1";
@@ -53,7 +52,7 @@ class ChangeContratStatus extends Component
             // Change Contrat Status
             $this->contrat->status = "Validé call";
             $this->contrat->save();
-            ClientSigner::dispatch($this->contrat);
+            ClientSignerCspePlus::dispatch($this->contrat);
         }
     }
 }

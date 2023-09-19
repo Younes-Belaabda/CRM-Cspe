@@ -6,7 +6,7 @@
     @endforeach
     <div class="bg-gray-800 text-gray-300 p-6 relative md:ml-64">
         <h1 class="order-1 text-3xl font-extrabold tracking-tight mt-2">&#187; Nouveau Contrat</h1>
-        <form name="new_stark_contrat_request_form" action="{{ route('store-contract') }}" method="post" id="newContrat"
+        <form name="new_stark_contrat_request_form" action="{{ route('agent.contrat.store') }}" method="post" id="newContrat"
             autocomplete="off">
             @csrf
             <div class="container bg-gray-700 shadow overflow-hidden sm:rounded-sm my-5 p-10">

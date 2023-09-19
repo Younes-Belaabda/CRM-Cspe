@@ -31,7 +31,7 @@ class Contrat extends Model
             'is_mail_opened'
     ];
 
-    protected $casts = [ 'date'=>'datetime'];
+    protected $casts = ['date'=>'datetime'];
 
 
     public function user(){
@@ -42,9 +42,8 @@ class Contrat extends Model
     {
         parent::boot();
         self::creating(function ($model) {
-            $model->rum =  IdGenerator::generate(['table' => 'contrats', 'field' => 'rum' , 'length' => 12, 'prefix' => 'cspeplus°']);
+            $model->rum =  IdGenerator::generate(['table' => 'contrats', 'field' => 'rum' , 'length' => 12, 'prefix' => 'cspe°']);
             $model->uid = Uuid::v1();
-            // $model->uid =  IdGenerator::generate(['table' => 'contrats', 'field' => 'uid' , 'length' => 9, 'prefix' => 'CSPE']);
         });
     }
 

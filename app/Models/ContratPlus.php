@@ -32,7 +32,7 @@ class ContratPlus extends Model
             'is_mail_opened'
     ];
 
-    protected $casts = [ 'date'=>'datetime'];
+    protected $casts = ['date'=>'datetime'];
 
      public function user(){
         return $this->belongsTo(User::class);
@@ -42,9 +42,8 @@ class ContratPlus extends Model
     {
         parent::boot();
         self::creating(function ($model) {
-            $model->rum =  IdGenerator::generate(['table' => 'contrats_pluses', 'field' => 'rum' , 'length' => 12, 'prefix' => 'cspe°']);
+            $model->rum =  IdGenerator::generate(['table' => 'contrat_pluses', 'field' => 'rum' , 'length' => 16, 'prefix' => 'cspeplus°']);
             $model->uid = Uuid::v1();
-            // $model->uid =  IdGenerator::generate(['table' => 'contrats', 'field' => 'uid' , 'length' => 9, 'prefix' => 'CSPE']);
         });
     }
 

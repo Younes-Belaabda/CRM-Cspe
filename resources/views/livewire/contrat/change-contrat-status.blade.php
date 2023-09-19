@@ -1,3 +1,5 @@
-<div>
-    <button class="button__primary" wire:click="signer()">Cliquer 3 fois pour signer</button>
+<div id="button-area">
+    <button class="button__primary" wire:click="signer()">
+        {{ $text_button }}
+    </button>
 </div>
