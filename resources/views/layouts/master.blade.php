@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <link rel="icon" type="image/png" href="/assets/images/favicon.png" />
+    <<link rel="icon" type="image/png" href="{{ asset('images/favicon.ico') }}" />
     <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1">
     <title>Accueil | CALL</title>
     <link rel="stylesheet" href="{{ asset('css/tailwind.css') }}">
