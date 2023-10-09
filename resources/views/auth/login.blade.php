@@ -20,7 +20,7 @@
             <div class="max-w-md w-full space-y-8">
                 <div>
                     <img class="mx-auto h-auto w-auto" src="{{ asset('images/logo-transparent.png') }}" alt="CSPE" style="width: 128px">
-                    <p style="text-align: center">CONTRAT SERVICE PRESTATION ÈNERGIE</p>
+                    <p style="text-align: center">CONTRAT SERVICE PRESTATION ÉNERGIE</p>
                     <h2 class="text-center mt-12 text-3xl font-extrabold">
                         Connexion à votre compte
                     </h2>
