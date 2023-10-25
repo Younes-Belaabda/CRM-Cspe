@@ -7,6 +7,6 @@
 </p>
 <p>Pour la mise en place du prélèvement nécessaire au paiement de votre service CSPE, il vous suffit de cliquer sur le lien suivant :</p>
 <p>
-    <a href="https://pay.gocardless.com/AL000JH1P6TNWD">https://pay.gocardless.com/AL000JH1P6TNWD</a>
+    <a href="https://pay.gocardless.com/AL0009JCSXVPTF">https://pay.gocardless.com/AL0009JCSXVPTF</a>
 </p>
 <p>Cordialement.</p>
