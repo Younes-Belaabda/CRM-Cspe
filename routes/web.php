@@ -36,6 +36,7 @@ Route::prefix('export/')->name('export.')->group(function(){
 Route::get('/contracts', [\App\Http\Controllers\ContratController::class , 'all'])->name('contracts');
 Route::get('/contractsplus', [\App\Http\Controllers\ContratController::class , 'all_plus'])->name('contracts_plus');
 // Signature Page
+Route::get('/signer/{contrat}', [\App\Http\Controllers\ContratController::class , 'signer'])->name('signer');
 Route::get('/signature/{contrat}', [\App\Http\Controllers\ContratController::class , 'signature'])->name('signature');
 Route::get('/signatureplus/{contrat}', [\App\Http\Controllers\ContratController::class , 'signatureplus'])->name('signatureplus');
 

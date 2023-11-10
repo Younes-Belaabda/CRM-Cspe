@@ -118,7 +118,14 @@ class ContratController extends Controller
         return view('pages.agent.contract.allplus' , compact('contrats'));
     }
 
-
+    /**
+     * Change status to valide au call
+     */
+    public function signer(Contrat $contrat){
+        $contrat->status = "Validé call";
+        $contrat->save();
+        return back();
+    }
 
 
 

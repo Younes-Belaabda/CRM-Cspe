@@ -94,7 +94,7 @@
                                         <i class="fa-solid fa-signature"></i> Signature
                                     </button>
                                 </a>
-                                <a href="{{ route('signature' , ['contrat' => $contrat]) }}" target="_blank">
+                                <a href="{{ route('signer' , ['contrat' => $contrat]) }}" target="_blank">
                                     <button
                                         class="mt-2 w-full py-2 px-10 border border-transparent text-sm font-medium rounded-sm text-white bg-gray-800 hover:bg-gray-700 focus:ring-offset-gray-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-800">
                                         <i class="fa-solid fa-check"></i> Signer
