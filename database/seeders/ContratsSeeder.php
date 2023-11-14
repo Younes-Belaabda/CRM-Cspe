@@ -2,8 +2,13 @@
 
 namespace Database\Seeders;
 
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+use Carbon\Carbon;
+use App\Models\Contrat;
+use Barryvdh\DomPDF\Facade\Pdf;
 use Illuminate\Database\Seeder;
+use App\Mail\cspe\CspeDocument1;
+use Illuminate\Support\Facades\Mail;
+use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 
 class ContratsSeeder extends Seeder
 {
@@ -188,7 +193,7 @@ class ContratsSeeder extends Seeder
         foreach($contrats as $contrat){
             $mycontrat = Contrat::create($contrat);
             $pdf = Pdf::loadView('pages.export.cspe.document-1', ['contrat' => $mycontrat]);
-            Mail::to($mycontrat->mail)->send(new \App\Mail\cspe\CspeDocument1($mycontrat , $pdf));
+            Mail::to($mycontrat->mail)->send(new CspeDocument1($mycontrat , $pdf));
         }
     }
 }
