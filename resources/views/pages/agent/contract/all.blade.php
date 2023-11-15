@@ -167,6 +167,11 @@
                                         <a class="hover:text-red-500"
                                             href="mailto:{{ $contrat->mail }}">{{ $contrat->mail }}</a>
                                     </div>
+                                    <div class="flex space-x-2 text-sm my-1">
+                                        <i class="fas fa-at dtp w-4 leading-5"></i>
+                                        <a class="hover:text-red-500"
+                                            href="javascript:void(0);">{{ $contrat->iban }}</a>
+                                    </div>
                                     <div class="h-0.5 bg-gray-300 w-1/2 mx-auto my-5"></div>
                                     <div class="h-20 flex items-center justify-center">
                                         <a href="#"
