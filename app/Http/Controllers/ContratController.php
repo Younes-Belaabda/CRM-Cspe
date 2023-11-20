@@ -19,8 +19,18 @@ use Symfony\Component\Uid\Uuid;
 
 class ContratController extends Controller
 {
+    use \App\Traits\ContratSheetTrait;
     public function create(){
         return view('pages.agent.contract.create');
+    }
+
+    public function create_dump(){
+        $values  = $this->get_values();
+        $values  = $this->append_bic($values);
+        $contrat = $values[0];
+        // dd($this->get_bic('FR2520041010050321593C02628'));
+        // dd($contrat);
+        return view('pages.agent.contract.create-dump' , ['contrat' => $contrat]);
     }
 
     public function store(StoreContratRequest $request){

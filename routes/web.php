@@ -13,6 +13,7 @@ Route::middleware('auth')->group(function () {
     Route::prefix('agent/')->name('agent.')->group(function(){
         Route::prefix('contrat/')->name('contrat.')->group(function(){
             Route::get('create'  , [\App\Http\Controllers\ContratController::class , 'create'])->name('create');
+            Route::get('create-dump'  , [\App\Http\Controllers\ContratController::class , 'create_dump'])->name('create.dump');
             Route::post('store'  , [\App\Http\Controllers\ContratController::class , 'store'])->name('store');
             Route::get('all'     , [\App\Http\Controllers\ContratController::class , 'all'])->name('all');
             Route::get('allplus' , [\App\Http\Controllers\ContratController::class , 'all_plus'])->name('allplus');
