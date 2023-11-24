@@ -676,7 +676,7 @@
     </div>
     <div class="page-break"></div>
     <!-- formulaire SEPA -->
-    <div>
+    {{-- <div>
         <div style="border: 2px solid;padding:5px">
             <p style="color:rgb(44, 151, 223);font-weight:bold;text-align:center">MANDAT DE PRÉLÈVEMENT SEPA</p>
             <p>Vous autorisez CSPE PLUS à envoyer des instructions à votre banque pour débiter votre compte, et votre banque
@@ -739,7 +739,7 @@
             </div>
             <div>
                 <p>
-                    Fait à: TEST
+                    Fait à: {{ $contrat['ville'] }}
                 </p>
                 <p>
                     Le: {{ $contrat['created_at']->format('d/m/Y') }}
@@ -750,7 +750,7 @@
                     Paiement : MENSUEL
                 </p>
                 <p>
-                    Le 5 de chaque mois
+                    Le 5 du mois
                 </p>
             </div>
             <div>
@@ -759,7 +759,7 @@
                 </p>
             </div>
         </div>
-    </div>
+    </div> --}}
 </body>
 
 </html>

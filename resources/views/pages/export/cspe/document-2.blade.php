@@ -739,7 +739,7 @@
             </div>
             <div>
                 <p>
-                    Fait à: TEST
+                    Fait à: {{ $contrat['ville'] }}
                 </p>
                 <p>
                     Le: {{ $contrat['created_at']->format('d/m/Y') }}
@@ -750,7 +750,7 @@
                     Paiement : TRIMESTRIEL
                 </p>
                 <p>
-                    Le 5 de chaque mois
+                    Le 5 du mois
                 </p>
             </div>
             <div>
