@@ -192,7 +192,7 @@
                 </li>
             @endforeach
         </ul>
-        {{ $contrats->links() }}
+        {{ $contrats->links('vendor.pagination.simple-tailwind') }}
     </div>
     <script>
         let button_details = document.querySelectorAll('.detail_button')
