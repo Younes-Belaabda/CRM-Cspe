@@ -30,7 +30,7 @@ class ExportBulletinSouscription extends Controller
             else{
                 $pdf = Pdf::loadView('pages.export.cspeplus.bulletin', ['contrat' => $contrat]);
             }
-            $pdf->save("cspe/" . $contrat->nom . "-" . $contrat->prenom . "-" . $contrat->rum . ".pdf");
+            $pdf->save("cspe/" . str_replace('/' , '-' , $contrat->nom) . "-" . str_replace('/' , '-' , $contrat->prenom) . "-" . $contrat->rum . ".pdf");
         }
 
     }
