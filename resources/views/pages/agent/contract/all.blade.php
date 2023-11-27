@@ -192,6 +192,7 @@
                 </li>
             @endforeach
         </ul>
+        {{ $contrats->links() }}
     </div>
     <script>
         let button_details = document.querySelectorAll('.detail_button')
