@@ -275,8 +275,8 @@
                 </h2>
                 <div class="">
                     <select name="type" class="w-full md:col-span-12 col-span-1 py-2 px-3 placeholder-gray-700 bg-gray-500 rounded-sm border border-solid border-gray-900 focus:ring-offset-gray-700 focus:border-gray-700 focus:ring-2 focus:ring-offset-2 focus:ring-gray-500 outline-none my-1">
-                        <option value="Contrat">cspe</option>
-                        <option value="ContratPlus">cspe plus</option>
+                        <option value="cspe">cspe</option>
+                        <option value="cspeplus">cspe plus</option>
                     </select>
                     {{-- <input type="text" id="bic" name="bic" required="required" autocomplete="off"
                         class="bic phone w-full py-2 px-3 placeholder-gray-700 bg-gray-500 rounded-sm border border-solid border-gray-900 focus:ring-offset-gray-700 focus:border-gray-700 focus:ring-2 focus:ring-offset-2 focus:ring-gray-500 outline-none my-1"

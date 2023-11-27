@@ -1,26 +1,4 @@
-@extends('layouts.master')
-
-@section('body')
-    <div class="bg-gray-700 text-gray-300 p-6 relative md:ml-64 min-h-screen overflow-x-hidden">
-        <a href="{{ route('agent.contrat.create') }}">
-            <button
-                class="md:absolute right-12 top-10 w-auto py-2 px-4 block ml-auto md:ml-0 mr-0 md:mr-5 rounded-md shadow-lg border border-transparent text-md font-bold rounded-sm text-white bg-red-900 hover:bg-red-800 focus:ring-offset-gray-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-900">
-                <i class="fa-solid fa-plus"></i> Nouveau Contrat
-            </button>
-        </a>
-        <div class="text-3xl">{{ Auth::user()->name }}</div>
-        <div>&#187; Mes contrats</div>
-        <form name="search_form" method="post" class="flex flex-row items-stretch h-12 my-2 md:my-5">
-            <input type="text" id="search_form_search" name="search_form[search]"
-                placeholder="Rechercher un contrat ou un groupe de contrats..." class="w-full rounded-l-md px-4" />
-            <button type="submit" id="search_form_submit" name="search_form[submit]"
-                class="font-medium rounded-r-md px-4 text-white bg-red-900 hover:bg-red-800 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-900">Rechercher</button>
-            <input type="hidden" id="search_form__token" name="search_form[_token]"
-                value="a4c11.ZNwbm7e7rADicHb__yWjBmd0HogFLcTUwb6QqHNdAF4.L-V-6PPkmnSTQyyciHf6fwY-VMJaHL2dkf_dmQRvcQo8qmL65tfmb4EaBQ" />
-        </form>
-        <ul class="list w-full text-white flex flex-wrap justify-around">
-            @foreach ($contrats as $contrat)
-                {{-- <li class="m-5">
+<li class="m-5">
                     <div class="contract-item relative bg-gray-600 py-6 px-6 rounded-md w-72 my-4 shadow-lg">
                         <div>
                             <p class="text-xl font-semibold">
@@ -154,48 +132,4 @@
                             </div>
                         </div>
                     </div>
-                </li> --}}
-                <livewire:dashboard.contrat :contrat='$contrat'/>
-            @endforeach
-        </ul>
-        {{ $contrats->links('pages.pagination.tailwind') }}
-    </div>
-    <script>
-        let button_details = document.querySelectorAll('.detail_button')
-        let add_audio_file_button = document.querySelectorAll('.add_audio_file_button')
-        let closemodal = document.querySelectorAll('.modal-close')
-
-        for (var i = 0; i < closemodal.length; i++) {
-            closemodal[i].addEventListener('click', closeModal)
-        }
-
-        button_details.forEach((button) => {
-            button.addEventListener('click', (e) => {
-                let numcont = e.target.getAttribute('data-value')
-                document.getElementById(numcont).style.display = 'block'
-                document.querySelectorAll('.back-button').forEach(back => {
-                    back.addEventListener('click', () => {
-                        document.getElementById(numcont).style.display = 'none'
-                    })
-                })
-            })
-        })
-
-        add_audio_file_button.forEach((button) => {
-            button.addEventListener('click', (e) => {
-                let numcont = e.target.getAttribute('data-value')
-                document.getElementsByClassName('audioContractId')[0].value = numcont
-                document.getElementById("audio-file-upload").style.display = 'block'
-                document.getElementById("audio-file-upload").querySelector('.back-button').addEventListener(
-                    'click', (e) => {
-                        document.getElementById("audio-file-upload").style.display = 'none'
-                    })
-            })
-        })
-
-        function closeModal() {
-            const modal = document.querySelector('.notification')
-            modal.classList.add('hidden')
-        }
-    </script>
-@endsection
+                </li>
