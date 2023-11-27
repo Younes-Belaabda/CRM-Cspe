@@ -87,7 +87,8 @@ class ContratController extends Controller
 
 
     public function all(){
-        $contrats = Auth::user()->contrats->reverse();
+        // $contrats = Auth::user()->contrats->reverse();
+        $contrats = \App\Models\Contrat::all();
         return view('pages.agent.contract.all' , compact('contrats'));
     }
 
