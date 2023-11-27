@@ -56,7 +56,7 @@
         <ul class="list w-full text-white flex flex-wrap justify-around">
             @foreach ($contrats as $contrat)
                 <li class="m-5">
-                    <div class="contract-item relative bg-gray-600 py-6 px-6 rounded-md w-50 my-4 shadow-lg">
+                    <div class="contract-item relative bg-gray-600 py-6 px-6 rounded-md w-72 my-4 shadow-lg">
                         <div>
                             <p class="text-xl font-semibold">
                                 Contrat <span class="list-numcontract">{{ $contrat->rum }}</span>
@@ -83,7 +83,7 @@
                                         <p class="list-status text-yellow-600">{{ $contrat->status }}</p>
                                     </div>
                                 </div>
-                                <div class="grid grid-cols-2 gap-1">
+                                <div class="sm:grid sm:grid-cols-2 gap-1">
                                     <a href="{{ route('cspe' , ['contrat' => $contrat , 'doc' => 1]) }}" target="_blank">
                                         <button
                                             class="mt-2 w-full py-2 px-10 border border-transparent text-sm font-medium rounded-sm text-white bg-gray-800 hover:bg-gray-700 focus:ring-offset-gray-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-800">
