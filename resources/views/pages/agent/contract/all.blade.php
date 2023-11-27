@@ -18,7 +18,7 @@
             <input type="hidden" id="search_form__token" name="search_form[_token]"
                 value="a4c11.ZNwbm7e7rADicHb__yWjBmd0HogFLcTUwb6QqHNdAF4.L-V-6PPkmnSTQyyciHf6fwY-VMJaHL2dkf_dmQRvcQo8qmL65tfmb4EaBQ" />
         </form>
-        <div class="flex flex-col">
+        {{-- <div class="flex flex-col">
             <p>Trier par :</p>
             <ul class="list-none flex gap-4 flex-wrap flex-row mt-2 space-y-0 justify-start">
                 <li class="flex justify-center items-center">
@@ -52,11 +52,11 @@
 
                 </li>
             </ul>
-        </div>
+        </div> --}}
         <ul class="list w-full text-white flex flex-wrap justify-around">
             @foreach ($contrats as $contrat)
                 <li class="m-5">
-                    <div class="contract-item relative bg-gray-600 py-6 px-6 rounded-md w-72 my-4 shadow-lg">
+                    <div class="contract-item relative bg-gray-600 py-6 px-6 rounded-md w-50 my-4 shadow-lg">
                         <div>
                             <p class="text-xl font-semibold">
                                 Contrat <span class="list-numcontract">{{ $contrat->rum }}</span>
@@ -83,35 +83,38 @@
                                         <p class="list-status text-yellow-600">{{ $contrat->status }}</p>
                                     </div>
                                 </div>
-                                <button
-                                    class="w-full detail_button py-2 px-10 border border-transparent text-sm font-medium rounded-sm text-white bg-gray-800 hover:bg-gray-700 focus:ring-offset-gray-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-800"
-                                    data-value="contrat{{ $contrat->id }}">
-                                    <i class="fa-solid fa-circle-info"></i> Détails
-                                </button>
-                                <a href="{{ route('signature' , ['contrat' => $contrat]) }}" target="_blank">
+                                <div class="grid grid-cols-2 gap-1">
+                                    <a href="{{ route('cspe' , ['contrat' => $contrat , 'doc' => 1]) }}" target="_blank">
+                                        <button
+                                            class="mt-2 w-full py-2 px-10 border border-transparent text-sm font-medium rounded-sm text-white bg-gray-800 hover:bg-gray-700 focus:ring-offset-gray-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-800">
+                                            <i class="fa-solid fa-envelope"></i> Document 1
+                                        </button>
+                                    </a>
+                                    <a href="{{ route('cspe' , ['contrat' => $contrat , 'doc' => 2]) }}" target="_blank">
+                                        <button
+                                            class="mt-2 w-full py-2 px-10 border border-transparent text-sm font-medium rounded-sm text-white bg-gray-800 hover:bg-gray-700 focus:ring-offset-gray-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-800">
+                                            <i class="fa-solid fa-envelope"></i> Document 2
+                                        </button>
+                                    </a>
+
+                                    <a href="{{ route('signature' , ['contrat' => $contrat]) }}" target="_blank">
+                                        <button
+                                            class="mt-2 w-full py-2 px-10 border border-transparent text-sm font-medium rounded-sm text-white bg-gray-800 hover:bg-gray-700 focus:ring-offset-gray-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-800">
+                                            <i class="fa-solid fa-signature"></i> Signature
+                                        </button>
+                                    </a>
+                                    <a href="{{ route('signer' , ['contrat' => $contrat]) }}" target="_blank">
+                                        <button
+                                            class="mt-2 w-full py-2 px-10 border border-transparent text-sm font-medium rounded-sm text-white bg-gray-800 hover:bg-gray-700 focus:ring-offset-gray-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-800">
+                                            <i class="fa-solid fa-check"></i> Signer
+                                        </button>
+                                    </a>
                                     <button
-                                        class="mt-2 w-full py-2 px-10 border border-transparent text-sm font-medium rounded-sm text-white bg-gray-800 hover:bg-gray-700 focus:ring-offset-gray-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-800">
-                                        <i class="fa-solid fa-signature"></i> Signature
+                                        class="detail_button mt-2 w-full py-2 px-10 border border-transparent text-sm font-medium rounded-sm text-white bg-gray-800 hover:bg-gray-700 focus:ring-offset-gray-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-800"
+                                        data-value="contrat{{ $contrat->id }}">
+                                        <i class="fa-solid fa-circle-info"></i> Détails
                                     </button>
-                                </a>
-                                <a href="{{ route('signer' , ['contrat' => $contrat]) }}" target="_blank">
-                                    <button
-                                        class="mt-2 w-full py-2 px-10 border border-transparent text-sm font-medium rounded-sm text-white bg-gray-800 hover:bg-gray-700 focus:ring-offset-gray-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-800">
-                                        <i class="fa-solid fa-check"></i> Signer
-                                    </button>
-                                </a>
-                                <a href="{{ route('cspe' , ['contrat' => $contrat , 'doc' => 1]) }}" target="_blank">
-                                    <button
-                                        class="mt-2 w-full py-2 px-10 border border-transparent text-sm font-medium rounded-sm text-white bg-gray-800 hover:bg-gray-700 focus:ring-offset-gray-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-800">
-                                        <i class="fa-solid fa-envelope"></i> Document 1
-                                    </button>
-                                </a>
-                                <a href="{{ route('cspe' , ['contrat' => $contrat , 'doc' => 2]) }}" target="_blank">
-                                    <button
-                                        class="mt-2 w-full py-2 px-10 border border-transparent text-sm font-medium rounded-sm text-white bg-gray-800 hover:bg-gray-700 focus:ring-offset-gray-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-800">
-                                        <i class="fa-solid fa-envelope"></i> Document 2
-                                    </button>
-                                </a>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -179,7 +182,7 @@
                                     </div>
                                     <div class="h-0.5 bg-gray-300 w-1/2 mx-auto my-5"></div>
                                     <div class="h-20 flex items-center justify-center">
-                                        <a href="#"
+                                        <a href="javascript:void(0);"
                                             class="back-button py-2 px-10 rounded-md shadow-lg border border-transparent text-sm font-bold rounded-sm text-white bg-red-900 hover:bg-red-800 focus:ring-offset-gray-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-900">Retour</a>
                                     </div>
                                 </div>

@@ -46,6 +46,7 @@
                     </div>
                     <div class="grid md:grid-cols-6 lg:gap-8 md:col-span-8 col-span-3 grid-cols-1 gap-2 mt-6 relative">
                         <label class="md:absolute md:-top-7 block text-lg">Date de naissance</label>
+                        
                         <div class="md:col-span-2 col-span-1">
                             <input type="text" id="bday" name="bday" required="required" autocomplete="off"
                             class="phone w-full py-2 px-3 placeholder-gray-700 bg-gray-500 rounded-sm border border-solid border-gray-900 focus:ring-offset-gray-700 focus:border-gray-700 focus:ring-2 focus:ring-offset-2 focus:ring-gray-500 outline-none my-1 @error('prenom') border-red-500 @enderror"

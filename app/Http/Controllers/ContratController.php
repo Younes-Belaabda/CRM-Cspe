@@ -5,17 +5,18 @@ namespace App\Http\Controllers;
 use Exception;
 use Carbon\Carbon;
 use App\Models\Contrat;
+use App\Export\ExportCspe;
 use App\Events\EmailOpened;
 use App\Models\ContratPlus;
 use App\Mail\ContratCreated;
 use Illuminate\Http\Request;
 use Barryvdh\DomPDF\Facade\Pdf;
+use Symfony\Component\Uid\Uuid;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Mail;
 use App\Http\Requests\StoreContratRequest;
 use Haruncpi\LaravelIdGenerator\IdGenerator;
 use Illuminate\Validation\ValidationException;
-use Symfony\Component\Uid\Uuid;
 
 class ContratController extends Controller
 {
@@ -28,81 +29,48 @@ class ContratController extends Controller
         $values  = $this->get_values();
         $values  = $this->append_bic($values);
         $contrat = $values[0];
-        // dd($this->get_bic('FR2520041010050321593C02628'));
-        // dd($contrat);
         return view('pages.agent.contract.create-dump' , ['contrat' => $contrat]);
     }
 
     public function store(StoreContratRequest $request){
-
-        $validated = $request->validated();
-
-        // // Validate Date
-        $day   = $request->bday;
-        $month = $request->bmonth;
-        $year  = $request->byear;
-
-        // Insert Contrat [DB]
-        if($request->type == 'cspe')
-            $contrat = Contrat::create([
-                'genre'  => $request->genre,
-                'nom'     => $request->nom,
-                // 'rum' =>  IdGenerator::generate(['table' => 'contrats', 'field' => 'rum' , 'length' => 12, 'prefix' => 'cspe°']),
-                // 'uid' => Uuid::v1(),
-                'prenom'  => $request->prenom,
-                'adresse' => $request->adresse,
-                'date'    => Carbon::createFromFormat('d/m/Y' , "$day/$month/$year"),
-                'zipcode'     => $request->zipcode,
-                'ville'   => $request->ville,
-                'pays'    => $request->pays,
-                'mobile'  => $request->mobile,
-                'telephone' => $request->telephone,
-                'mail'    => $request->mail,
-                'iban'    => $request->iban,
-                'bic'     => $request->bic,
-                'status'  => 'En attente client',
-                'user_id' => Auth::user()->id
-            ]);
-        else
-            $contrat = ContratPlus::create([
-                'genre'  => $request->genre,
-                'nom'     => $request->nom,
-                // 'rum' =>  IdGenerator::generate(['table' => 'contrats', 'length' => 9, 'prefix' => 'c°']),
-                'prenom'  => $request->prenom,
-                'adresse' => $request->adresse,
-                'date'    => Carbon::createFromFormat('d/m/Y' , "$day/$month/$year"),
-                'zipcode'     => $request->zipcode,
-                'ville'   => $request->ville,
-                'pays'    => $request->pays,
-                'mobile'  => $request->mobile,
-                'telephone' => $request->telephone,
-                'mail'    => $request->mail,
-                'iban'    => $request->iban,
-                'bic'     => $request->bic,
-                'status'  => 'En attente client',
-                'user_id' => Auth::user()->id
-            ]);
-
-        if($request->type == 'cspe'){
-            $pdf = Pdf::loadView('pages.export.cspe.document-1', ['contrat' => $contrat]);
-        }
-        else{
-            $pdf = Pdf::loadView('pages.export.cspeplus.document-1', ['contrat' => $contrat]);
-        }
-
-
-        if($request->type == 'cspe'){
-            Mail::to($contrat->mail)->send(new \App\Mail\cspe\CspeDocument1($contrat , $pdf));
-        }
-        else{
-            Mail::to($contrat->mail)->send(new \App\Mail\cspeplus\CspeDocument1($contrat , $pdf));
-        }
-
-
-        if($request->type == 'cspe')
-            return redirect()->route('agent.contrat.signature' , ['contrat' => $contrat]);
-        else
-            return redirect()->route('agent.contrat.signatureplus' , ['contrat' => $contrat]);
+        // insert both cspe & cspeplus contrats
+        $validated       = $request->validated();
+        $request['date'] = "$request->bday/$request->bmonth/$request->byear";
+        $type            = $request->type;
+        $cspeConfig = [
+            'cspe' => [
+                'model'  => 'App\\Models\\Contrat',
+                'export' => 'App\\Export\\ExportCspe',
+                'document' => 'pages.export.cspe.document-1',
+                'route' => 'agent.contrat.signature'
+            ],
+            'cspeplus' => [
+                'model'  => 'App\\Models\\ContratPlus',
+                'export' => 'App\\Export\\ExportCspePlus',
+                'document' => 'pages.export.cspeplus.document-1',
+                'route' => 'agent.contrat.signatureplus'
+            ]
+        ];
+        $contrat = $cspeConfig[$type]['model']::create([
+            'genre'  => $request->genre,
+            'nom'     => $request->nom,
+            'prenom'  => $request->prenom,
+            'adresse' => $request->adresse,
+            'date'    => Carbon::createFromFormat('d/m/Y' , $request->date),
+            'zipcode' => $request->zipcode,
+            'ville'   => $request->ville,
+            'pays'    => $request->pays,
+            'mobile'  => $request->mobile,
+            'telephone' => $request->telephone,
+            'mail'    => $request->mail,
+            'iban'    => $request->iban,
+            'bic'     => $request->bic,
+            'status'  => 'En attente client',
+            'user_id' => Auth::user()->id
+        ]);
+        $exportcspe = new $cspeConfig[$type]['export']();
+        $exportcspe->setView($cspeConfig[$type]['document'])->setContrat($contrat)->setPdf()->sendMail();
+        return redirect()->route($cspeConfig[$type]['route'] , ['contrat' => $contrat]);
     }
 
     public function signature(Contrat $contrat){

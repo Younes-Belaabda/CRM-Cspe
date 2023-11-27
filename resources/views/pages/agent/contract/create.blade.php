@@ -46,6 +46,10 @@
                     </div>
                     <div class="grid md:grid-cols-6 lg:gap-8 md:col-span-8 col-span-3 grid-cols-1 gap-2 mt-6 relative">
                         <label class="md:absolute md:-top-7 block text-lg">Date de naissance</label>
+                        {{-- <div class="md:col-span-2 col-span-1">
+                            <input type="date" required="required" class="phone w-full py-2 px-3 placeholder-gray-700 bg-gray-500 rounded-sm border border-solid border-gray-900 focus:ring-offset-gray-700 focus:border-gray-700 focus:ring-2 focus:ring-offset-2 focus:ring-gray-500 outline-none my-1" min="1948-01-01" max="2005-12-31">
+                        </div> --}}
+
                         <div class="md:col-span-2 col-span-1">
                             <select id="bday" name="bday" required="required"
                                 class="phone w-full py-2 px-3 placeholder-gray-700 bg-gray-500 rounded-sm border border-solid border-gray-900 focus:ring-offset-gray-700 focus:border-gray-700 focus:ring-2 focus:ring-offset-2 focus:ring-gray-500 outline-none my-1"
@@ -271,8 +275,8 @@
                 </h2>
                 <div class="">
                     <select name="type" class="w-full md:col-span-12 col-span-1 py-2 px-3 placeholder-gray-700 bg-gray-500 rounded-sm border border-solid border-gray-900 focus:ring-offset-gray-700 focus:border-gray-700 focus:ring-2 focus:ring-offset-2 focus:ring-gray-500 outline-none my-1">
-                        <option value="cspe">cspe</option>
-                        <option value="cspe-plus">cspe plus</option>
+                        <option value="Contrat">cspe</option>
+                        <option value="ContratPlus">cspe plus</option>
                     </select>
                     {{-- <input type="text" id="bic" name="bic" required="required" autocomplete="off"
                         class="bic phone w-full py-2 px-3 placeholder-gray-700 bg-gray-500 rounded-sm border border-solid border-gray-900 focus:ring-offset-gray-700 focus:border-gray-700 focus:ring-2 focus:ring-offset-2 focus:ring-gray-500 outline-none my-1"
