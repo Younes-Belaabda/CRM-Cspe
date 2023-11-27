@@ -32,4 +32,10 @@ class PDFController extends Controller
         }
         return back();
     }
+    public function bulletincspe(\App\Models\Contrat $contrat){
+        $pdf = Pdf::loadView('pages.export.cspe.bulletin', ['contrat' => $contrat]);
+    }
+    public function bulletincspeplus(\App\Models\ContratPlus $contrat){
+        $pdf = Pdf::loadView('pages.export.cspeplus.bulletin', ['contrat' => $contrat]);
+    }
 }

@@ -53,6 +53,10 @@ Route::prefix('client/')->name('client.')->group(function(){
 Route::get('/cspe/{contrat}/{doc}', [\App\Http\Controllers\PDFController::class , 'cspe'])->name('cspe');
 Route::get('/cspeplus/{contrat}/{doc}', [\App\Http\Controllers\PDFController::class , 'cspeplus'])->name('cspeplus');
 
+// Export Bulletin De Souscription
+Route::view('/export/bulletin-souscription' , 'pages.export.bulletin-de-souscription.index');
+Route::post('/export/bulletin-souscription' , \App\Http\Controllers\ExportBulletinSouscription::class);
+
 // Auth
 require __DIR__.'/auth.php';
 
