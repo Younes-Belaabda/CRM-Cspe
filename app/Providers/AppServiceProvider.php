@@ -4,7 +4,7 @@ namespace App\Providers;
 
 use App\Models\Contrat;
 use App\Observers\ContratObserver;
-use Illuminate\Pagination\Paginator;
+// use Illuminate\Pagination\Paginator;
 use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
@@ -23,6 +23,5 @@ class AppServiceProvider extends ServiceProvider
     public function boot(): void
     {
         Contrat::observe(ContratObserver::class);
-        Paginator::useBootstrapFour();
     }
 }
